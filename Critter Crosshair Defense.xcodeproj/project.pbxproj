@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BD1A97242026DDCA0005CEE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1A97232026DDCA0005CEE0 /* AppDelegate.swift */; };
+		BD1A97262026DDCA0005CEE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1A97252026DDCA0005CEE0 /* ViewController.swift */; };
+		BD1A97292026DDCA0005CEE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD1A97272026DDCA0005CEE0 /* Main.storyboard */; };
+		BD1A972B2026DDCA0005CEE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD1A972A2026DDCA0005CEE0 /* Assets.xcassets */; };
+		BD1A972E2026DDCA0005CEE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD1A972C2026DDCA0005CEE0 /* LaunchScreen.storyboard */; };
+		BD1A97392026DDCA0005CEE0 /* Critter_Crosshair_DefenseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1A97382026DDCA0005CEE0 /* Critter_Crosshair_DefenseTests.swift */; };
+		BD1A97442026DDCA0005CEE0 /* Critter_Crosshair_DefenseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1A97432026DDCA0005CEE0 /* Critter_Crosshair_DefenseUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		BD1A97352026DDCA0005CEE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD1A97182026DDCA0005CEE0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD1A971F2026DDCA0005CEE0;
+			remoteInfo = "Critter Crosshair Defense";
+		};
+		BD1A97402026DDCA0005CEE0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD1A97182026DDCA0005CEE0 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD1A971F2026DDCA0005CEE0;
+			remoteInfo = "Critter Crosshair Defense";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		BD1A97202026DDCA0005CEE0 /* Critter Crosshair Defense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Critter Crosshair Defense.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD1A97232026DDCA0005CEE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BD1A97252026DDCA0005CEE0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		BD1A97282026DDCA0005CEE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		BD1A972A2026DDCA0005CEE0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BD1A972D2026DDCA0005CEE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		BD1A972F2026DDCA0005CEE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD1A97342026DDCA0005CEE0 /* Critter Crosshair DefenseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Critter Crosshair DefenseTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD1A97382026DDCA0005CEE0 /* Critter_Crosshair_DefenseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Critter_Crosshair_DefenseTests.swift; sourceTree = "<group>"; };
+		BD1A973A2026DDCA0005CEE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BD1A973F2026DDCA0005CEE0 /* Critter Crosshair DefenseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Critter Crosshair DefenseUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BD1A97432026DDCA0005CEE0 /* Critter_Crosshair_DefenseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Critter_Crosshair_DefenseUITests.swift; sourceTree = "<group>"; };
+		BD1A97452026DDCA0005CEE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		BD1A971D2026DDCA0005CEE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD1A97312026DDCA0005CEE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD1A973C2026DDCA0005CEE0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		BD1A97172026DDCA0005CEE0 = {
+			isa = PBXGroup;
+			children = (
+				BD1A97222026DDCA0005CEE0 /* Critter Crosshair Defense */,
+				BD1A97372026DDCA0005CEE0 /* Critter Crosshair DefenseTests */,
+				BD1A97422026DDCA0005CEE0 /* Critter Crosshair DefenseUITests */,
+				BD1A97212026DDCA0005CEE0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BD1A97212026DDCA0005CEE0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				BD1A97202026DDCA0005CEE0 /* Critter Crosshair Defense.app */,
+				BD1A97342026DDCA0005CEE0 /* Critter Crosshair DefenseTests.xctest */,
+				BD1A973F2026DDCA0005CEE0 /* Critter Crosshair DefenseUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		BD1A97222026DDCA0005CEE0 /* Critter Crosshair Defense */ = {
+			isa = PBXGroup;
+			children = (
+				BD1A97232026DDCA0005CEE0 /* AppDelegate.swift */,
+				BD1A97252026DDCA0005CEE0 /* ViewController.swift */,
+				BD1A97272026DDCA0005CEE0 /* Main.storyboard */,
+				BD1A972A2026DDCA0005CEE0 /* Assets.xcassets */,
+				BD1A972C2026DDCA0005CEE0 /* LaunchScreen.storyboard */,
+				BD1A972F2026DDCA0005CEE0 /* Info.plist */,
+			);
+			path = "Critter Crosshair Defense";
+			sourceTree = "<group>";
+		};
+		BD1A97372026DDCA0005CEE0 /* Critter Crosshair DefenseTests */ = {
+			isa = PBXGroup;
+			children = (
+				BD1A97382026DDCA0005CEE0 /* Critter_Crosshair_DefenseTests.swift */,
+				BD1A973A2026DDCA0005CEE0 /* Info.plist */,
+			);
+			path = "Critter Crosshair DefenseTests";
+			sourceTree = "<group>";
+		};
+		BD1A97422026DDCA0005CEE0 /* Critter Crosshair DefenseUITests */ = {
+			isa = PBXGroup;
+			children = (
+				BD1A97432026DDCA0005CEE0 /* Critter_Crosshair_DefenseUITests.swift */,
+				BD1A97452026DDCA0005CEE0 /* Info.plist */,
+			);
+			path = "Critter Crosshair DefenseUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		BD1A971F2026DDCA0005CEE0 /* Critter Crosshair Defense */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD1A97482026DDCA0005CEE0 /* Build configuration list for PBXNativeTarget "Critter Crosshair Defense" */;
+			buildPhases = (
+				BD1A971C2026DDCA0005CEE0 /* Sources */,
+				BD1A971D2026DDCA0005CEE0 /* Frameworks */,
+				BD1A971E2026DDCA0005CEE0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Critter Crosshair Defense";
+			productName = "Critter Crosshair Defense";
+			productReference = BD1A97202026DDCA0005CEE0 /* Critter Crosshair Defense.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BD1A97332026DDCA0005CEE0 /* Critter Crosshair DefenseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD1A974B2026DDCA0005CEE0 /* Build configuration list for PBXNativeTarget "Critter Crosshair DefenseTests" */;
+			buildPhases = (
+				BD1A97302026DDCA0005CEE0 /* Sources */,
+				BD1A97312026DDCA0005CEE0 /* Frameworks */,
+				BD1A97322026DDCA0005CEE0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BD1A97362026DDCA0005CEE0 /* PBXTargetDependency */,
+			);
+			name = "Critter Crosshair DefenseTests";
+			productName = "Critter Crosshair DefenseTests";
+			productReference = BD1A97342026DDCA0005CEE0 /* Critter Crosshair DefenseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BD1A973E2026DDCA0005CEE0 /* Critter Crosshair DefenseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BD1A974E2026DDCA0005CEE0 /* Build configuration list for PBXNativeTarget "Critter Crosshair DefenseUITests" */;
+			buildPhases = (
+				BD1A973B2026DDCA0005CEE0 /* Sources */,
+				BD1A973C2026DDCA0005CEE0 /* Frameworks */,
+				BD1A973D2026DDCA0005CEE0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BD1A97412026DDCA0005CEE0 /* PBXTargetDependency */,
+			);
+			name = "Critter Crosshair DefenseUITests";
+			productName = "Critter Crosshair DefenseUITests";
+			productReference = BD1A973F2026DDCA0005CEE0 /* Critter Crosshair DefenseUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BD1A97182026DDCA0005CEE0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = "Aleksander Makedonski";
+				TargetAttributes = {
+					BD1A971F2026DDCA0005CEE0 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+					BD1A97332026DDCA0005CEE0 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BD1A971F2026DDCA0005CEE0;
+					};
+					BD1A973E2026DDCA0005CEE0 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = BD1A971F2026DDCA0005CEE0;
+					};
+				};
+			};
+			buildConfigurationList = BD1A971B2026DDCA0005CEE0 /* Build configuration list for PBXProject "Critter Crosshair Defense" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = BD1A97172026DDCA0005CEE0;
+			productRefGroup = BD1A97212026DDCA0005CEE0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				BD1A971F2026DDCA0005CEE0 /* Critter Crosshair Defense */,
+				BD1A97332026DDCA0005CEE0 /* Critter Crosshair DefenseTests */,
+				BD1A973E2026DDCA0005CEE0 /* Critter Crosshair DefenseUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		BD1A971E2026DDCA0005CEE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD1A972E2026DDCA0005CEE0 /* LaunchScreen.storyboard in Resources */,
+				BD1A972B2026DDCA0005CEE0 /* Assets.xcassets in Resources */,
+				BD1A97292026DDCA0005CEE0 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD1A97322026DDCA0005CEE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD1A973D2026DDCA0005CEE0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		BD1A971C2026DDCA0005CEE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD1A97262026DDCA0005CEE0 /* ViewController.swift in Sources */,
+				BD1A97242026DDCA0005CEE0 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD1A97302026DDCA0005CEE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD1A97392026DDCA0005CEE0 /* Critter_Crosshair_DefenseTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BD1A973B2026DDCA0005CEE0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD1A97442026DDCA0005CEE0 /* Critter_Crosshair_DefenseUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		BD1A97362026DDCA0005CEE0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BD1A971F2026DDCA0005CEE0 /* Critter Crosshair Defense */;
+			targetProxy = BD1A97352026DDCA0005CEE0 /* PBXContainerItemProxy */;
+		};
+		BD1A97412026DDCA0005CEE0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BD1A971F2026DDCA0005CEE0 /* Critter Crosshair Defense */;
+			targetProxy = BD1A97402026DDCA0005CEE0 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		BD1A97272026DDCA0005CEE0 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BD1A97282026DDCA0005CEE0 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		BD1A972C2026DDCA0005CEE0 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				BD1A972D2026DDCA0005CEE0 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		BD1A97462026DDCA0005CEE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		BD1A97472026DDCA0005CEE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BD1A97492026DDCA0005CEE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Critter Crosshair Defense/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ChangzhouPanda.Critter-Crosshair-Defense";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		BD1A974A2026DDCA0005CEE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Critter Crosshair Defense/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ChangzhouPanda.Critter-Crosshair-Defense";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		BD1A974C2026DDCA0005CEE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Critter Crosshair DefenseTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ChangzhouPanda.Critter-Crosshair-DefenseTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Critter Crosshair Defense.app/Critter Crosshair Defense";
+			};
+			name = Debug;
+		};
+		BD1A974D2026DDCA0005CEE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Critter Crosshair DefenseTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ChangzhouPanda.Critter-Crosshair-DefenseTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Critter Crosshair Defense.app/Critter Crosshair Defense";
+			};
+			name = Release;
+		};
+		BD1A974F2026DDCA0005CEE0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Critter Crosshair DefenseUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ChangzhouPanda.Critter-Crosshair-DefenseUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Critter Crosshair Defense";
+			};
+			name = Debug;
+		};
+		BD1A97502026DDCA0005CEE0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "Critter Crosshair DefenseUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "ChangzhouPanda.Critter-Crosshair-DefenseUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Critter Crosshair Defense";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		BD1A971B2026DDCA0005CEE0 /* Build configuration list for PBXProject "Critter Crosshair Defense" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD1A97462026DDCA0005CEE0 /* Debug */,
+				BD1A97472026DDCA0005CEE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD1A97482026DDCA0005CEE0 /* Build configuration list for PBXNativeTarget "Critter Crosshair Defense" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD1A97492026DDCA0005CEE0 /* Debug */,
+				BD1A974A2026DDCA0005CEE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD1A974B2026DDCA0005CEE0 /* Build configuration list for PBXNativeTarget "Critter Crosshair DefenseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD1A974C2026DDCA0005CEE0 /* Debug */,
+				BD1A974D2026DDCA0005CEE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BD1A974E2026DDCA0005CEE0 /* Build configuration list for PBXNativeTarget "Critter Crosshair DefenseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BD1A974F2026DDCA0005CEE0 /* Debug */,
+				BD1A97502026DDCA0005CEE0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BD1A97182026DDCA0005CEE0 /* Project object */;
+}
