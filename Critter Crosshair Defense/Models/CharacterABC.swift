@@ -25,7 +25,7 @@ class Character{
         
     }
     
-    var animationsDict = [String: SKAction]()
+    private var animationsDict = [String: SKAction]()
  
     init(name: String, anchorPoint: CGPoint, zPosition: CGFloat, xScale: CGFloat, yScale: CGFloat){
         
@@ -38,6 +38,24 @@ class Character{
         node.anchorPoint = anchorPoint
         node.zPosition = zPosition
         
+    }
+    
+    func addCharacter(toScene scene: SKScene){
+        self.node.move(toParent: scene)
+    }
+    
+    func setPosition(at position: CGPoint){
+        self.node.position = position
+    }
+    
+    func runTextureAnimation(){
+        if let textureAnimation = self.animationsDict[kTextureAnimation]{
+            
+            let repeatedAnimation = SKAction.repeatForever(textureAnimation)
+            
+            self.node.run(repeatedAnimation)
+
+        }
     }
     
     func configureTexture(with texture: SKTexture){
@@ -83,26 +101,32 @@ class Character{
         
     }
     
+    
+    func getAnimationsDictDebugString() -> String{
+        
+        return self.animationsDict.description
+    }
+    
     func configureAnimations(with animationGenerator: AnimationGenerator){
         
-        if animationGenerator is MoveAnimation{
+        if animationGenerator is MoveAnimationGenerator{
             
             self.animationsDict[kMoveAnimation] = animationGenerator.createAnimation()
         }
         
-        if animationGenerator is RotateAnimation{
+        if animationGenerator is RotateAnimationGenerator{
             
             self.animationsDict[kRotateAnimation] = animationGenerator.createAnimation()
             
         }
         
-        if animationGenerator is ScaleAnimation{
+        if animationGenerator is ScaleAnimationGenerator{
             
             self.animationsDict[kScaleAnimation] = animationGenerator.createAnimation()
             
         }
         
-        if animationGenerator is TextureAnimation{
+        if animationGenerator is TextureAnimationGenerator{
             
             self.animationsDict[kTextureAnimation] = animationGenerator.createAnimation()
             
@@ -116,24 +140,24 @@ class Character{
         
         animationGenerators.forEach({
             
-            if $0 is MoveAnimation{
+            if $0 is MoveAnimationGenerator{
                 
                 self.animationsDict[kMoveAnimation] = $0.createAnimation()
             }
             
-            if $0 is RotateAnimation{
+            if $0 is RotateAnimationGenerator{
                 
                 self.animationsDict[kRotateAnimation] = $0.createAnimation()
 
             }
         
-            if $0 is ScaleAnimation{
+            if $0 is ScaleAnimationGenerator{
                 
                 self.animationsDict[kScaleAnimation] = $0.createAnimation()
 
             }
             
-            if $0 is TextureAnimation{
+            if $0 is TextureAnimationGenerator{
                 
                 self.animationsDict[kTextureAnimation] = $0.createAnimation()
 

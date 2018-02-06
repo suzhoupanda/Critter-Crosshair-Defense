@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BD0AE8B420297A8200D27296 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0AE8B320297A8200D27296 /* Orientation.swift */; };
+		BD0AE8B620298F6F00D27296 /* CharacterManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0AE8B520298F6F00D27296 /* CharacterManagerDelegate.swift */; };
+		BD0AE8BC2029921100D27296 /* BaseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0AE8BB2029921100D27296 /* BaseScene.swift */; };
 		BD15C95D20284277005C93B8 /* TextureProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD15C95C20284277005C93B8 /* TextureProcessor.swift */; };
 		BD15C95F202842AE005C93B8 /* TextureConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD15C95E202842AE005C93B8 /* TextureConfiguration.swift */; };
 		BD1A97242026DDCA0005CEE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1A97232026DDCA0005CEE0 /* AppDelegate.swift */; };
@@ -24,7 +27,6 @@
 		BDB28D3C20271285004244CB /* PhysicsConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB28D3B20271285004244CB /* PhysicsConfiguration.swift */; };
 		BDB28D3E20271880004244CB /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB28D3D20271880004244CB /* Animation.swift */; };
 		BDB28D4020272E69004244CB /* LoadTextureOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB28D3F20272E69004244CB /* LoadTextureOperation.swift */; };
-		BDB28D4420272E8B004244CB /* LoadAnimationsOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB28D4320272E8B004244CB /* LoadAnimationsOperation.swift */; };
 		BDB28D46202732BD004244CB /* CKHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDB28D45202732BD004244CB /* CKHelper.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +48,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BD0AE8B320297A8200D27296 /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
+		BD0AE8B520298F6F00D27296 /* CharacterManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterManagerDelegate.swift; sourceTree = "<group>"; };
+		BD0AE8BB2029921100D27296 /* BaseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScene.swift; sourceTree = "<group>"; };
 		BD15C95C20284277005C93B8 /* TextureProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureProcessor.swift; sourceTree = "<group>"; };
 		BD15C95E202842AE005C93B8 /* TextureConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureConfiguration.swift; sourceTree = "<group>"; };
 		BD1A97202026DDCA0005CEE0 /* Critter Crosshair Defense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Critter Crosshair Defense.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,7 +75,6 @@
 		BDB28D3B20271285004244CB /* PhysicsConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhysicsConfiguration.swift; sourceTree = "<group>"; };
 		BDB28D3D20271880004244CB /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		BDB28D3F20272E69004244CB /* LoadTextureOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadTextureOperation.swift; sourceTree = "<group>"; };
-		BDB28D4320272E8B004244CB /* LoadAnimationsOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadAnimationsOperation.swift; sourceTree = "<group>"; };
 		BDB28D45202732BD004244CB /* CKHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CKHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +104,44 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BD0AE8B720298F7700D27296 /* CharacterManager */ = {
+			isa = PBXGroup;
+			children = (
+				BD0AE8B520298F6F00D27296 /* CharacterManagerDelegate.swift */,
+				BDB28D3920270C8B004244CB /* CharacterManager.swift */,
+			);
+			path = CharacterManager;
+			sourceTree = "<group>";
+		};
+		BD0AE8B820298F9200D27296 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				BD15C95C20284277005C93B8 /* TextureProcessor.swift */,
+				BDB28D45202732BD004244CB /* CKHelper.swift */,
+				BDB28D3D20271880004244CB /* Animation.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		BD0AE8B920298FA700D27296 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BD1A97552026F6030005CEE0 /* CharacterABC.swift */,
+				BD0AE8B320297A8200D27296 /* Orientation.swift */,
+				BD15C95E202842AE005C93B8 /* TextureConfiguration.swift */,
+				BDB28D3B20271285004244CB /* PhysicsConfiguration.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		BD0AE8BA2029900100D27296 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				BDB28D3F20272E69004244CB /* LoadTextureOperation.swift */,
+			);
+			path = Operations;
+			sourceTree = "<group>";
+		};
 		BD1A97172026DDCA0005CEE0 = {
 			isa = PBXGroup;
 			children = (
@@ -125,23 +167,19 @@
 			isa = PBXGroup;
 			children = (
 				BD1A97512026DE2C0005CEE0 /* Critter Crosshair Defense.entitlements */,
-				BDB28D3D20271880004244CB /* Animation.swift */,
-				BD1A97552026F6030005CEE0 /* CharacterABC.swift */,
-				BDB28D3B20271285004244CB /* PhysicsConfiguration.swift */,
-				BD1A97592026FB630005CEE0 /* CritterThumbnail.swift */,
+				BD0AE8B720298F7700D27296 /* CharacterManager */,
+				BD0AE8B820298F9200D27296 /* Utils */,
+				BD0AE8B920298FA700D27296 /* Models */,
+				BD0AE8BA2029900100D27296 /* Operations */,
 				BD1A97232026DDCA0005CEE0 /* AppDelegate.swift */,
+				BD0AE8BB2029921100D27296 /* BaseScene.swift */,
 				BD1A97252026DDCA0005CEE0 /* ViewController.swift */,
+				BD1A97592026FB630005CEE0 /* CritterThumbnail.swift */,
 				BD1A97272026DDCA0005CEE0 /* Main.storyboard */,
 				BD1A972A2026DDCA0005CEE0 /* Assets.xcassets */,
 				BD1A972C2026DDCA0005CEE0 /* LaunchScreen.storyboard */,
 				BD1A972F2026DDCA0005CEE0 /* Info.plist */,
 				BD1A97572026FA460005CEE0 /* CritterCell.swift */,
-				BDB28D3F20272E69004244CB /* LoadTextureOperation.swift */,
-				BDB28D4320272E8B004244CB /* LoadAnimationsOperation.swift */,
-				BDB28D3920270C8B004244CB /* CharacterManager.swift */,
-				BD15C95E202842AE005C93B8 /* TextureConfiguration.swift */,
-				BDB28D45202732BD004244CB /* CKHelper.swift */,
-				BD15C95C20284277005C93B8 /* TextureProcessor.swift */,
 			);
 			path = "Critter Crosshair Defense";
 			sourceTree = "<group>";
@@ -315,15 +353,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				BDB28D3C20271285004244CB /* PhysicsConfiguration.swift in Sources */,
+				BD0AE8B420297A8200D27296 /* Orientation.swift in Sources */,
 				BD1A97262026DDCA0005CEE0 /* ViewController.swift in Sources */,
 				BD15C95D20284277005C93B8 /* TextureProcessor.swift in Sources */,
+				BD0AE8BC2029921100D27296 /* BaseScene.swift in Sources */,
 				BD15C95F202842AE005C93B8 /* TextureConfiguration.swift in Sources */,
 				BDB28D3E20271880004244CB /* Animation.swift in Sources */,
 				BDB28D46202732BD004244CB /* CKHelper.swift in Sources */,
-				BDB28D4420272E8B004244CB /* LoadAnimationsOperation.swift in Sources */,
 				BD1A975A2026FB630005CEE0 /* CritterThumbnail.swift in Sources */,
 				BD1A97582026FA460005CEE0 /* CritterCell.swift in Sources */,
 				BDB28D3A20270C8B004244CB /* CharacterManager.swift in Sources */,
+				BD0AE8B620298F6F00D27296 /* CharacterManagerDelegate.swift in Sources */,
 				BD1A97242026DDCA0005CEE0 /* AppDelegate.swift in Sources */,
 				BD1A97562026F6030005CEE0 /* CharacterABC.swift in Sources */,
 				BDB28D4020272E69004244CB /* LoadTextureOperation.swift in Sources */,

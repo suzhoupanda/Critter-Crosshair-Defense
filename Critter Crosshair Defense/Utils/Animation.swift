@@ -17,7 +17,7 @@ protocol AnimationGenerator{
     
 }
 
-struct TextureAnimation: AnimationGenerator{
+struct TextureAnimationGenerator: AnimationGenerator{
     var animationName: String
     
     var hasSetTextureAnimation: Bool{
@@ -51,7 +51,7 @@ struct TextureAnimation: AnimationGenerator{
     
 }
 
-struct RotateAnimation: AnimationGenerator{
+struct RotateAnimationGenerator: AnimationGenerator{
     var animationName: String
     
     var hasRotateToAnimation: Bool{
@@ -107,7 +107,7 @@ struct RotateAnimation: AnimationGenerator{
 }
 
 
-struct ScaleAnimation: AnimationGenerator{
+struct ScaleAnimationGenerator: AnimationGenerator{
     var animationName: String
     
     var hasScaleToAnimation: Bool{
@@ -184,7 +184,7 @@ struct ScaleAnimation: AnimationGenerator{
     
 }
 
-struct MoveAnimation: AnimationGenerator{
+struct MoveAnimationGenerator: AnimationGenerator{
     
     var animationName: String
     
@@ -245,9 +245,9 @@ struct MoveAnimation: AnimationGenerator{
     
     func createMoveToAnimation() -> SKAction{
         
-        switch (self.xMoveBy,self.yMoveBy) {
+        switch (self.xMoveTo,self.yMoveTo) {
         case (.some,.some):
-            return SKAction.move(to: CGPoint(x: CGFloat(self.xMoveBy!), y: CGFloat(self.yMoveBy!)), duration: self.duration)
+            return SKAction.move(to: CGPoint(x: CGFloat(self.xMoveTo!), y: CGFloat(self.yMoveTo!)), duration: self.duration)
         case (.some,.none):
             return SKAction.moveTo(x: CGFloat(self.xMoveTo!), duration: self.duration)
         case (.none,.some):

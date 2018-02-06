@@ -14,7 +14,7 @@ struct TextureConfiguration{
     var name: String
     var texture: SKTexture?
     var order: Int
-    var orientation: Int
+    var orientation: Orientation
     
     
   
