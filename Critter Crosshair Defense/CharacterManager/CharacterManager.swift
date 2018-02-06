@@ -56,12 +56,14 @@ class CharacterManager{
         
         
         let LoadCharacterOperation = configureLoadCharactersOperation(withCompletionHandler: {
-            print("Finished downloading all the characters!")
             
             
             self.configureWingmanAnimations()
             self.configureSpikeballAnimations()
             self.configureSunAnimations()
+            
+            self.configureFlymanAnimations()
+            self.configureSpikemanAnimations()
             
             self.showCharacterAnimationsDebugInfo()
             
@@ -80,7 +82,6 @@ class CharacterManager{
     func loadAnimationTextures(){
         
         let LoadAnimationTextureOperation = configureLoadAnimationTexturesOperation(withCompletionHandler: {
-            print("Finished downloading all the animation textures.")
         })
         
         self.publicDB.add(LoadAnimationTextureOperation)
@@ -89,12 +90,8 @@ class CharacterManager{
     func loadCharacters(){
         
         let LoadCharacterOperation = configureLoadCharactersOperation(withCompletionHandler: {
-            print("Finished downloading all the characters!")
             
-            
-            self.configureWingmanAnimations()
-            self.configureSpikeballAnimations()
-            self.configureSunAnimations()
+        
             
             self.showCharacterAnimationsDebugInfo()
             
@@ -122,6 +119,35 @@ class CharacterManager{
             print("Sun Animations Info: \(debugStr)")
             
         }
+        
+        
+        if let spikeman = self.characterDict["spikeman"]{
+            let debugStr = spikeman.getAnimationsDictDebugString()
+            print("Spikeman Animations Info: \(debugStr)")
+            
+        }
+        
+        if let flyman = self.characterDict["flyman"]{
+            let debugStr = flyman.getAnimationsDictDebugString()
+            print("Spikeman Animations Info: \(debugStr)")
+            
+        }
+    }
+    
+    private func configureSpikemanAnimations(){
+        
+        let tConfigurationManager = TextureConfigurationManager(withTextureConfigurations: self.tConfigurations)
+        
+        if let spikeman = self.characterDict["spikeman"]{
+            
+            let spikemanTextureAnimationsGenerator = tConfigurationManager.getTextureAnimation(forTextureAnimationWith: "spikemanWalkRight", andOrientation: .Right, andTimePerFrame: 0.40)
+            
+            
+            spikeman.configureAnimations(with: spikemanTextureAnimationsGenerator)
+            self.delegate?.didConfigureTextureAnimationFor(spikeman)
+            
+        }
+        
     }
     
     private func configureWingmanAnimations(){
@@ -139,6 +165,24 @@ class CharacterManager{
         }
         
     }
+    
+    
+    private func configureFlymanAnimations(){
+        
+        let tConfigurationManager = TextureConfigurationManager(withTextureConfigurations: self.tConfigurations)
+        
+        if let flyman = self.characterDict["flyman"]{
+            
+            let flymanTextureAnimationsGenerator = tConfigurationManager.getTextureAnimation(forTextureAnimationWith: "flymanFly", andOrientation: .None, andTimePerFrame: 0.40)
+            
+            
+            flyman.configureAnimations(with: flymanTextureAnimationsGenerator)
+            self.delegate?.didConfigureTextureAnimationFor(flyman)
+            
+        }
+        
+    }
+    
     
     private func configureSunAnimations(){
         
@@ -218,7 +262,6 @@ class CharacterManager{
                 
                 let LoadCharacterPhysicsOperation = self.configureLoadCharacterPhysicsOperation(forCharacter: character, andCKRecord: record, andCompletionHandler: {
                     
-                    print("Finished loading physics properties for character: \(character.name)")
                     self.delegate?.didConfigurePhysicsFor(character)
                 })
                 
@@ -232,7 +275,6 @@ class CharacterManager{
         
         ckOperation.completionBlock = {
             
-            print("Characters fully loaded: \(self.characterDict.description)")
             
             if let completionHandler = completionHandler{
                 completionHandler()
@@ -495,11 +537,9 @@ class CharacterManager{
             let physicsConfiguration = PhysicsConfiguration(withCategoryBitmask: Int32(categoryBitMask), withCollisionBitMask: Int32(collisionBitMask), andWithContactBitMask: Int32(contactBitMask), withFieldBitMask: Int32(fieldBitMask), pAffectedByGravity: affectedByGravity, allowsRotation: allowsRotation, isDynamic: isDynamic, angularDamping: CGFloat(angularDamping), linearDamping: CGFloat(linearDamping), friction: CGFloat(friction), restitution: CGFloat(restitution), charge: CGFloat(charge), mass: CGFloat(mass), density: CGFloat(density), velocity: velocity, angularVelocity: CGFloat(angularVelocity))
             
             
-            print("configuring physics properties for character")
             
             character.configurePhysicsBody(physicsConfiguration: physicsConfiguration)
             
-            print("Finished configuring physics properties: \(character.node.physicsBody!)")
             
             
             

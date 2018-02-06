@@ -67,15 +67,17 @@ class BaseScene: SKScene, CharacterManagerDelegate{
         
         print("Configured physics for: \(character.name)")
         
-        character.addCharacter(toScene: self)
-        
-        character.setPosition(at: self.randomPoint)
-    }
+        }
     
     
     func didConfigureTextureAnimationFor(_ character: Character) {
         
-        print("Textures have been loaded!")
+        print("Texture animation configure for: \(character.name)")
+        
+        character.addCharacter(toScene: self)
+        
+        character.setPosition(at: self.randomPoint)
+
         
         character.runTextureAnimation()
     }
