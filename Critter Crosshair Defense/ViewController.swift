@@ -28,6 +28,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         
+      
+        
         baseScene = BaseScene(size: UIScreen.main.bounds.size)
         
         self.skView.presentScene(baseScene)

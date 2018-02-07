@@ -11,9 +11,10 @@ import Foundation
 
 protocol CharacterManagerDelegate: class {
     
-    func didLoadTextureConfigurations()
-    func didLoadCharacterDictionaryWith(_ character: Character)
+    func didDownloadAllCharacterImageSprites()
+    
     func didConfigurePhysicsFor(_ character: Character)
-    func didConfigureTextureAnimationFor(_ character: Character)
+    
+    func didConfigureAnimationFor(_ character: Character)
     
 }

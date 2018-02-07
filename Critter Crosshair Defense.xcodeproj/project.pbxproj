@@ -10,14 +10,13 @@
 		BD0AE8B420297A8200D27296 /* Orientation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0AE8B320297A8200D27296 /* Orientation.swift */; };
 		BD0AE8B620298F6F00D27296 /* CharacterManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0AE8B520298F6F00D27296 /* CharacterManagerDelegate.swift */; };
 		BD0AE8BC2029921100D27296 /* BaseScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD0AE8BB2029921100D27296 /* BaseScene.swift */; };
-		BD15C95D20284277005C93B8 /* TextureProcessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD15C95C20284277005C93B8 /* TextureProcessor.swift */; };
+		BD15C95D20284277005C93B8 /* TextureConfigurationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD15C95C20284277005C93B8 /* TextureConfigurationManager.swift */; };
 		BD15C95F202842AE005C93B8 /* TextureConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD15C95E202842AE005C93B8 /* TextureConfiguration.swift */; };
 		BD1A97242026DDCA0005CEE0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1A97232026DDCA0005CEE0 /* AppDelegate.swift */; };
 		BD1A97262026DDCA0005CEE0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1A97252026DDCA0005CEE0 /* ViewController.swift */; };
 		BD1A97292026DDCA0005CEE0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD1A97272026DDCA0005CEE0 /* Main.storyboard */; };
 		BD1A972B2026DDCA0005CEE0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BD1A972A2026DDCA0005CEE0 /* Assets.xcassets */; };
 		BD1A972E2026DDCA0005CEE0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BD1A972C2026DDCA0005CEE0 /* LaunchScreen.storyboard */; };
-		BD1A97392026DDCA0005CEE0 /* Critter_Crosshair_DefenseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1A97382026DDCA0005CEE0 /* Critter_Crosshair_DefenseTests.swift */; };
 		BD1A97442026DDCA0005CEE0 /* Critter_Crosshair_DefenseUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1A97432026DDCA0005CEE0 /* Critter_Crosshair_DefenseUITests.swift */; };
 		BD1A97542026E13D0005CEE0 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BD1A97532026E13D0005CEE0 /* CloudKit.framework */; };
 		BD1A97562026F6030005CEE0 /* CharacterABC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD1A97552026F6030005CEE0 /* CharacterABC.swift */; };
@@ -49,7 +48,7 @@
 		BD0AE8B320297A8200D27296 /* Orientation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orientation.swift; sourceTree = "<group>"; };
 		BD0AE8B520298F6F00D27296 /* CharacterManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterManagerDelegate.swift; sourceTree = "<group>"; };
 		BD0AE8BB2029921100D27296 /* BaseScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseScene.swift; sourceTree = "<group>"; };
-		BD15C95C20284277005C93B8 /* TextureProcessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureProcessor.swift; sourceTree = "<group>"; };
+		BD15C95C20284277005C93B8 /* TextureConfigurationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureConfigurationManager.swift; sourceTree = "<group>"; };
 		BD15C95E202842AE005C93B8 /* TextureConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextureConfiguration.swift; sourceTree = "<group>"; };
 		BD1A97202026DDCA0005CEE0 /* Critter Crosshair Defense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Critter Crosshair Defense.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD1A97232026DDCA0005CEE0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,7 +58,6 @@
 		BD1A972D2026DDCA0005CEE0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BD1A972F2026DDCA0005CEE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD1A97342026DDCA0005CEE0 /* Critter Crosshair DefenseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Critter Crosshair DefenseTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		BD1A97382026DDCA0005CEE0 /* Critter_Crosshair_DefenseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Critter_Crosshair_DefenseTests.swift; sourceTree = "<group>"; };
 		BD1A973A2026DDCA0005CEE0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BD1A973F2026DDCA0005CEE0 /* Critter Crosshair DefenseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Critter Crosshair DefenseUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BD1A97432026DDCA0005CEE0 /* Critter_Crosshair_DefenseUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Critter_Crosshair_DefenseUITests.swift; sourceTree = "<group>"; };
@@ -112,7 +110,6 @@
 		BD0AE8B820298F9200D27296 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				BD15C95C20284277005C93B8 /* TextureProcessor.swift */,
 				BDB28D45202732BD004244CB /* CKHelper.swift */,
 				BDB28D3D20271880004244CB /* Animation.swift */,
 			);
@@ -124,6 +121,7 @@
 			children = (
 				BD1A97552026F6030005CEE0 /* CharacterABC.swift */,
 				BD0AE8B320297A8200D27296 /* Orientation.swift */,
+				BD15C95C20284277005C93B8 /* TextureConfigurationManager.swift */,
 				BD15C95E202842AE005C93B8 /* TextureConfiguration.swift */,
 				BDB28D3B20271285004244CB /* PhysicsConfiguration.swift */,
 			);
@@ -181,7 +179,6 @@
 		BD1A97372026DDCA0005CEE0 /* Critter Crosshair DefenseTests */ = {
 			isa = PBXGroup;
 			children = (
-				BD1A97382026DDCA0005CEE0 /* Critter_Crosshair_DefenseTests.swift */,
 				BD1A973A2026DDCA0005CEE0 /* Info.plist */,
 			);
 			path = "Critter Crosshair DefenseTests";
@@ -349,7 +346,7 @@
 				BDB28D3C20271285004244CB /* PhysicsConfiguration.swift in Sources */,
 				BD0AE8B420297A8200D27296 /* Orientation.swift in Sources */,
 				BD1A97262026DDCA0005CEE0 /* ViewController.swift in Sources */,
-				BD15C95D20284277005C93B8 /* TextureProcessor.swift in Sources */,
+				BD15C95D20284277005C93B8 /* TextureConfigurationManager.swift in Sources */,
 				BD0AE8BC2029921100D27296 /* BaseScene.swift in Sources */,
 				BD15C95F202842AE005C93B8 /* TextureConfiguration.swift in Sources */,
 				BDB28D3E20271880004244CB /* Animation.swift in Sources */,
@@ -366,7 +363,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BD1A97392026DDCA0005CEE0 /* Critter_Crosshair_DefenseTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -558,6 +554,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T9J39WJJ9G;
 				INFOPLIST_FILE = "Critter Crosshair DefenseTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ChangzhouPanda.Critter-Crosshair-DefenseTests";
@@ -574,6 +571,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T9J39WJJ9G;
 				INFOPLIST_FILE = "Critter Crosshair DefenseTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ChangzhouPanda.Critter-Crosshair-DefenseTests";
@@ -589,6 +587,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T9J39WJJ9G;
 				INFOPLIST_FILE = "Critter Crosshair DefenseUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ChangzhouPanda.Critter-Crosshair-DefenseUITests";
@@ -604,6 +603,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T9J39WJJ9G;
 				INFOPLIST_FILE = "Critter Crosshair DefenseUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "ChangzhouPanda.Critter-Crosshair-DefenseUITests";

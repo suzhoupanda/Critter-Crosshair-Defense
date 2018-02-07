@@ -16,11 +16,11 @@ class CharacterManager{
     /** Stored Properties **/
     
     private var publicDB = CKHelper.sharedHelper.publicDB
-    private var backgroundQueue = OperationQueue()
     
-    private var characterDict = [String:Character]()
-    private var tConfigurations = [TextureConfiguration]()
-    private var animationTextures = [CKRecord]()
+     private var characterDict = [String:Character]()
+    
+     private var tConfigurations = [TextureConfiguration]()
+     private var animationTextures = [CKRecord]()
     
     weak var delegate: CharacterManagerDelegate?
     /** A computed property for the CKQuery that is used to initialize a CKQueryOperation that is responsible for loading all of the characters from the public database **/
@@ -49,9 +49,9 @@ class CharacterManager{
     
     func loadGameObjects(){
         
-        let LoadAnimationTextureOperation = configureLoadAnimationTexturesOperation(withCompletionHandler: {
+        let LoadTextureConfigurationsOperation = configureLoadTextureConfigurationsOperation(withCompletionHandler: {
             print("Finished downloading all the animation textures.")
-            self.delegate?.didLoadTextureConfigurations()
+            self.delegate?.didDownloadAllCharacterImageSprites()
         })
         
         
@@ -67,21 +67,32 @@ class CharacterManager{
             
             self.showCharacterAnimationsDebugInfo()
             
+            self.tConfigurations = []
+            self.animationTextures = []
+            
         })
         
         
-        LoadCharacterOperation.addDependency(LoadAnimationTextureOperation)
+        LoadCharacterOperation.addDependency(LoadTextureConfigurationsOperation)
         
-        self.publicDB.add(LoadAnimationTextureOperation)
+        self.publicDB.add(LoadTextureConfigurationsOperation)
         self.publicDB.add(LoadCharacterOperation)
         
     }
     
     /** Creates, configures, and returns a CKQueryOperation that will download all of the textures from the public database and convert them to TextureConfigruation objects **/
     
-    func loadAnimationTextures(){
+    
+    
+    
+    func loadAnimationTextures(withCompletionHandler completionHandler: (()->())? = nil){
         
-        let LoadAnimationTextureOperation = configureLoadAnimationTexturesOperation(withCompletionHandler: {
+        let LoadAnimationTextureOperation = configureLoadTextureConfigurationsOperation(withCompletionHandler: {
+            
+            if completionHandler != nil{
+                completionHandler!()
+
+            }
         })
         
         self.publicDB.add(LoadAnimationTextureOperation)
@@ -124,7 +135,6 @@ class CharacterManager{
         if let spikeman = self.characterDict["spikeman"]{
             let debugStr = spikeman.getAnimationsDictDebugString()
             print("Spikeman Animations Info: \(debugStr)")
-            
         }
         
         if let flyman = self.characterDict["flyman"]{
@@ -144,7 +154,7 @@ class CharacterManager{
             
             
             spikeman.configureAnimations(with: spikemanTextureAnimationsGenerator)
-            self.delegate?.didConfigureTextureAnimationFor(spikeman)
+            self.delegate?.didConfigureAnimationFor(spikeman)
             
         }
         
@@ -160,7 +170,7 @@ class CharacterManager{
             
             
             wingman.configureAnimations(with: wingmanTextureAnimationsGenerator)
-            self.delegate?.didConfigureTextureAnimationFor(wingman)
+            self.delegate?.didConfigureAnimationFor(wingman)
         
         }
         
@@ -177,7 +187,7 @@ class CharacterManager{
             
             
             flyman.configureAnimations(with: flymanTextureAnimationsGenerator)
-            self.delegate?.didConfigureTextureAnimationFor(flyman)
+            self.delegate?.didConfigureAnimationFor(flyman)
             
         }
         
@@ -194,7 +204,7 @@ class CharacterManager{
             
             
             sun.configureAnimations(with: sunTextureAnimationsGenerator)
-            self.delegate?.didConfigureTextureAnimationFor(sun)
+            self.delegate?.didConfigureAnimationFor(sun)
             
         }
 
@@ -212,12 +222,34 @@ class CharacterManager{
             
             
             spikeball.configureAnimations(with: spikeballTextureAnimationsGenerator)
-            self.delegate?.didConfigureTextureAnimationFor(spikeball)
+            self.delegate?.didConfigureAnimationFor(spikeball)
         }
         
     }
     
-    private func configureLoadAnimationTexturesOperation(withCompletionHandler completionHandler: (()->(Void))?) -> CKQueryOperation{
+    
+    func configureLoadAnimationTextureOperation(withCompletionHandler completionHandler: (()->())?) -> CKQueryOperation{
+        
+        let ckQueryOperation = CKQueryOperation(query: self.allTexturesQuery)
+        
+        ckQueryOperation.recordFetchedBlock = {
+            
+            record in
+            
+            self.animationTextures.append(record)
+        }
+        
+        ckQueryOperation.completionBlock = {
+            if completionHandler != nil{
+                completionHandler!()
+            }
+        }
+        
+        return ckQueryOperation
+    }
+    
+    
+     func configureLoadTextureConfigurationsOperation(withCompletionHandler completionHandler: (()->(Void))?) -> CKQueryOperation{
         
         let ckQueryOperation = CKQueryOperation(query: self.allTexturesQuery)
         
@@ -226,7 +258,7 @@ class CharacterManager{
             record in
             
             
-            if let tConfiguration = self.getTextureConfiguration(fromRecord: record){
+            if let tConfiguration = CharacterManager.GetTextureConfiguration(fromRecord: record){
                 self.tConfigurations.append(tConfiguration)
             }
            
@@ -234,7 +266,7 @@ class CharacterManager{
         }
         
         ckQueryOperation.completionBlock = {
-            print("Texture have been loaded. A total of \(self.tConfigurations.count) have been loaded")
+            print("Textures have been loaded. A total of \(self.tConfigurations.count) have been loaded")
             if let completionHandler = completionHandler{
                 completionHandler()
             }
@@ -255,7 +287,7 @@ class CharacterManager{
             
             record in
             
-            if let character = self.getCharacter(fromRecord: record){
+            if let character = CharacterManager.GetCharacter(fromRecord: record){
                 
                 
                 self.characterDict[character.name] = character
@@ -283,77 +315,6 @@ class CharacterManager{
         
         return ckOperation
     }
-    
-    func loadCharactersOnBackgroundQueue(){
-        
-        print("Preparing to load characters....")
-
-        self.publicDB.perform(self.allCharactersQuery, inZoneWith: nil){
-            
-            records, error in
-            
-            if(error != nil){
-                
-                print(error!.localizedDescription)
-                
-            } else {
-                
-                if let ckRecords = records, ckRecords.count > 0{
-                    
-                    ckRecords.forEach({
-                        
-                        self.loadCharacterOnBackgoundQueue(from: $0)
-                        
-                    })
-                }
-            }
-            
-            
-        }
-    }
-    
-    func loadCharacterOnBackgoundQueue(from ckRecord: CKRecord){
-        
-        print("Preparing to load character from record....")
-      
-        guard let anchorPointStr = ckRecord.value(forKey: "anchorPoint") as? String,
-            let zPosition = ckRecord.value(forKey: "zPosition") as? Double,
-            let xScale = ckRecord.value(forKey: "xScale") as? Double,
-            let yScale = ckRecord.value(forKey: "yScale") as? Double,
-            let charName = ckRecord.value(forKey: "name") as? String else {
-            return
-        }
-      
-        let anchorPoint = CGPointFromString(anchorPointStr)
-
-        
-        let character = Character(name: charName, anchorPoint: anchorPoint, zPosition: CGFloat(zPosition), xScale: CGFloat(xScale), yScale: CGFloat(yScale))
-        
-
-        //Create an operation to load the character's default texture
-        let ckTexture = CKTexture(with: ckRecord)
-        let loadTextureOperation = LoadTextureOperation(with: ckTexture)
-        
-        
-        loadTextureOperation.completionBlock = {
-            
-            if ckTexture.isDownloaded,let texture = ckTexture.texture{
-                character.configureTexture(with: texture)
-            }
-            
-            self.characterDict[character.name] = character
-            print("Finished loading the texture")
-        }
-        
-    
-
-        //Add operations to the background queue
-        backgroundQueue.addOperation(loadTextureOperation)
-       
-        
-    }
-    
-   
     
     
     
@@ -541,7 +502,7 @@ class CharacterManager{
             character.configurePhysicsBody(physicsConfiguration: physicsConfiguration)
             
             
-            
+            self.delegate?.didConfigurePhysicsFor(character)
             
         }
         
@@ -565,9 +526,45 @@ class CharacterManager{
     }
     
     
-    /** Helper methods for converting CKRecord to TextureConfiguration object **/
+ 
     
-    func getCharacter(fromRecord ckRecord: CKRecord) -> Character?{
+    
+}
+
+//MARK: ****** Convenience Method for Converting CKRecords to Data Mdodels
+
+extension CharacterManager{
+    
+    
+    static func GetTextureConfiguration(fromRecord ckRecord: CKRecord) -> TextureConfiguration?{
+        
+        guard let order = ckRecord.value(forKey: "order") as? Int64,
+            let name = ckRecord.value(forKey: "animationName") as? String else { return nil }
+        
+        guard  let orientationRawValue = ckRecord.value(forKey: "orientation") as? Int64,
+            let orientation = Orientation(rawValue: orientationRawValue) else { return nil }
+        
+        
+        let texture = CharacterManager.GetTexture(fromCKRecord: ckRecord)
+        
+        
+        return TextureConfiguration(name: name, texture: texture, order: Int(order), orientation: orientation)
+        
+    }
+    
+    
+    static func GetTexture(fromCKRecord ckRecord: CKRecord) -> SKTexture?{
+        
+        guard let asset = ckRecord.value(forKey: "texture") as? CKAsset,let imageData = NSData(contentsOf: asset.fileURL),let image = UIImage(data: imageData as Data) else {
+            
+            return nil
+        }
+        
+        return SKTexture(image: image)
+    }
+    
+    
+    static func GetCharacter(fromRecord ckRecord: CKRecord) -> Character?{
         
         guard let anchorPointStr = ckRecord.value(forKey: "anchorPoint") as? String,
             let zPosition = ckRecord.value(forKey: "zPosition") as? Double,
@@ -577,7 +574,7 @@ class CharacterManager{
                 return nil
         }
         
-        guard let texture = getTexture(fromCKRecord: ckRecord) else {
+        guard let texture = CharacterManager.GetTexture(fromCKRecord: ckRecord) else {
             return nil
         }
         
@@ -589,32 +586,4 @@ class CharacterManager{
         
         return character
     }
-    
-    
-    func getTextureConfiguration(fromRecord ckRecord: CKRecord) -> TextureConfiguration?{
-        
-        guard let order = ckRecord.value(forKey: "order") as? Int64,
-            let name = ckRecord.value(forKey: "animationName") as? String else { return nil }
-        
-        guard  let orientationRawValue = ckRecord.value(forKey: "orientation") as? Int64,
-        let orientation = Orientation(rawValue: orientationRawValue) else { return nil }
-        
-
-        let texture = getTexture(fromCKRecord: ckRecord)
-        
-       
-        return TextureConfiguration(name: name, texture: texture, order: Int(order), orientation: orientation)
-        
-    }
-    
-    func getTexture(fromCKRecord ckRecord: CKRecord) -> SKTexture?{
-        
-        guard let asset = ckRecord.value(forKey: "texture") as? CKAsset,let imageData = NSData(contentsOf: asset.fileURL),let image = UIImage(data: imageData as Data) else {
-            
-            return nil
-          }
-        
-        return SKTexture(image: image)
-    }
-    
 }

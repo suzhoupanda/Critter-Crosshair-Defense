@@ -48,20 +48,14 @@ class BaseScene: SKScene, CharacterManagerDelegate{
     }
     
     
-    func didLoadTextureConfigurations() {
+    func didDownloadAllCharacterImageSprites() {
         
         print("Textures have been loaded!")
         
         self.titleLabel.removeFromParent()
     }
     
-    func didLoadCharacterDictionaryWith(_ character: Character) {
-        
-        print("Character dictionary loaded with: \(character.name)")
-        
-       
-    }
-    
+   
     
     func didConfigurePhysicsFor(_ character: Character) {
         
@@ -70,7 +64,7 @@ class BaseScene: SKScene, CharacterManagerDelegate{
         }
     
     
-    func didConfigureTextureAnimationFor(_ character: Character) {
+    func didConfigureAnimationFor(_ character: Character) {
         
         print("Texture animation configure for: \(character.name)")
         

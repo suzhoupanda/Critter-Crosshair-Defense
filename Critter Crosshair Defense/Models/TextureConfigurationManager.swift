@@ -14,6 +14,7 @@ class TextureConfigurationManager{
     
     let tConfigurations: [TextureConfiguration]
     
+    
     init(withTextureConfigurations textureConfigurations: [TextureConfiguration]){
         self.tConfigurations = textureConfigurations
     }
@@ -29,9 +30,6 @@ class TextureConfigurationManager{
         return TextureAnimationGenerator(animationName: name, timePerFrame: timerPerFrame, textures: textures)
         
     }
-    
-    
-    
     
 
     
